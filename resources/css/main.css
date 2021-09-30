@@ -1,0 +1,97 @@
+/* Colors variables */
+:root {
+  /* Primary */
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+  /* Neutral */
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Body */
+body {
+  font-size: 15px;
+  font-family: Spartan, sans-serif;
+  color: var(--very-dark-magenta);
+}
+/* Grid Wrapper */
+.wrapper {
+  margin-top: 50px;
+  display: grid;
+  grid-template: minmax(250px) 400px 1fr / 1fr;
+}
+.introduction,
+.stars,
+.feedbacks {
+  padding: 5px;
+  margin: 20px;
+}
+/* Introduction */
+.introduction {
+  grid-area: "introduction";
+  text-align: center;
+}
+.paragraph {
+  color: var(--dark-grayish-magenta);
+}
+/* Introduction header */
+.introduction h1 {
+  margin: 0 40px 20px 40px;
+}
+/* Stars */
+.stars {
+  grid-area: "stars";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.stars div {
+  border-radius: 5px;
+  text-align: center;
+}
+.info {
+  width: 100%;
+  height: 75px;
+  font-weight: 700;
+  background-color: var(--light-grayish-magenta);
+}
+.star-icon {
+  margin: 5px;
+}
+.stars img {
+  margin: 3px;
+}
+/* Feedbacks */
+.feedbacks {
+  grid-area: "feedbacks";
+}
+.feedbacks img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+.block {
+  background-color: var(--very-dark-magenta);
+  color: var(--white);
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 30px;
+}
+.feedback-id {
+  display: flex;
+}
+.feedbacks span {
+  color: var(--dark-grayish-magenta);
+}
+.content {
+  margin-top: 25px;
+}
