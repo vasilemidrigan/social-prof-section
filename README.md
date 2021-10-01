@@ -23,11 +23,11 @@ Users should be able to:
 
 ### Screenshot
 
-mobile version:
+desktop version:
 
 ![](./images/desktop-version.png)
 
-desktop version:
+mobile version:
 
 ![](./images/mobile-version.png)
 
