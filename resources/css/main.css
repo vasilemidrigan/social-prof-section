@@ -2,12 +2,11 @@
 :root {
   /* Primary */
   --very-dark-magenta: hsl(300, 43%, 22%);
-  --light-grayish-magenta: hsl(300, 24%, 96%);
-  --white: hsl(0, 0%, 100%);
+  --soft-pink: hsl(333, 80%, 67%);
   /* Neutral */
-  --dark-grayish-magenta: hsl(303, 10%, 53%);
   --light-grayish-magenta: hsl(300, 24%, 96%);
   --white: hsl(0, 0%, 100%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
 }
 /* Global Styles */
 * {
@@ -15,17 +14,58 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* HTML */
+html {
+  position: relative;
+}
 /* Body */
 body {
   font-size: 15px;
   font-family: Spartan, sans-serif;
   color: var(--very-dark-magenta);
 }
+/* SVG Background */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+}
+.top {
+  top: 0;
+  left: 0;
+}
+@media (min-width: 1000px) {
+  .top {
+    width: 400px;
+  }
+}
+.bottom {
+  bottom: 0;
+  left: 0;
+}
+@media (min-width: 1000px) {
+  .bottom {
+    height: 500px;
+    left: unset;
+    right: 0;
+  }
+}
 /* Grid Wrapper */
 .wrapper {
   margin-top: 50px;
   display: grid;
-  grid-template: minmax(250px) 400px 1fr / 1fr;
+  grid-template: minmax(150px) 400px 1fr / 1fr;
+  grid-template-areas:
+    "introduction"
+    "stars"
+    "feedbacks";
+}
+@media (min-width: 1000px) {
+  .wrapper {
+    grid-template-areas:
+      "introduction stars"
+      "feedbacks feedbacks";
+  }
 }
 .introduction,
 .stars,
@@ -33,10 +73,23 @@ body {
   padding: 5px;
   margin: 20px;
 }
+@media (min-width: 1000px) {
+  .introduction,
+  .stars,
+  .feedbacks {
+    padding: unset;
+    margin: 20px;
+  }
+}
 /* Introduction */
 .introduction {
-  grid-area: "introduction";
+  grid-area: introduction;
   text-align: center;
+}
+@media (min-width: 1000px) {
+  .introduction {
+    text-align: unset;
+  }
 }
 .paragraph {
   color: var(--dark-grayish-magenta);
@@ -45,33 +98,68 @@ body {
 .introduction h1 {
   margin: 0 40px 20px 40px;
 }
+@media (min-width: 1000px) {
+  .introduction h1 {
+    margin: 0 0 20px 0;
+    width: 70%;
+  }
+}
 /* Stars */
 .stars {
-  grid-area: "stars";
+  grid-area: stars;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
-.stars div {
+.info {
+  margin: 10px;
   border-radius: 5px;
   text-align: center;
-}
-.info {
   width: 100%;
   height: 75px;
   font-weight: 700;
   background-color: var(--light-grayish-magenta);
 }
+@media (min-width: 1000px) {
+  .info {
+    width: 400px;
+    height: unset;
+    display: flex;
+    align-items: center;
+  }
+  .firstSection {
+    margin-right: 150px;
+  }
+  .secondSection {
+    margin-right: 100px;
+  }
+  .thirdSection {
+    margin-right: 50px;
+  }
+}
 .star-icon {
   margin: 5px;
+}
+@media (min-width: 1000px) {
+  .star-icon {
+    float: left;
+    margin-right: 20px;
+  }
 }
 .stars img {
   margin: 3px;
 }
 /* Feedbacks */
 .feedbacks {
-  grid-area: "feedbacks";
+  grid-area: feedbacks;
+}
+@media (min-width: 1000px) {
+  .feedbacks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .feedbacks img {
   width: 50px;
@@ -86,11 +174,28 @@ body {
   border-radius: 5px;
   padding: 30px;
 }
+@media (min-width: 1000px) {
+  .block {
+    height: 250px;
+    margin: 15px;
+  }
+  .first {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .second {
+    margin-top: 40px;
+  }
+  .third {
+    margin-top: 60px;
+    margin-right: 0;
+  }
+}
 .feedback-id {
   display: flex;
 }
 .feedbacks span {
-  color: var(--dark-grayish-magenta);
+  color: var(--soft-pink);
 }
 .content {
   margin-top: 25px;
